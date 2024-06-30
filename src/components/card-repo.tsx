@@ -26,13 +26,15 @@ export function CardRepo({
     : undefined;
 
   return (
-    <div className="w-full space-y-2 rounded-xl bg-gradient-to-r from-[#111729] to-[#1D1B48] py-4 pl-5">
+    <div className="w-full space-y-2 rounded-xl bg-gradient-to-r from-[#111729] to-[#1D1B48] px-5 py-4">
       <div>
         <p className="text-lg text-[#CDD5E0]">{name}</p>
         <p className="text-gray-400">{description}</p>
       </div>
 
-      <div className="flex items-center gap-5">
+      <div
+        className={`flex items-center ${!license && !forks && !stargazers_count ? "gap-0" : "gap-5"}`}
+      >
         <ul className="flex gap-3">
           {license && (
             <li className="flex items-center gap-1">
@@ -46,7 +48,6 @@ export function CardRepo({
               <p className="text-gray-400">{forks}</p>
             </li>
           )}
-
           {stargazers_count !== undefined && stargazers_count > 0 && (
             <li className="flex items-center gap-1">
               <img src={star} alt="star icon" />
@@ -54,13 +55,13 @@ export function CardRepo({
             </li>
           )}
         </ul>
-        <div>
-          {daysAgo !== undefined && (
+        {daysAgo !== undefined && (
+          <div>
             <p className="text-sm text-gray-400">
               {daysAgo === 0 ? "updated today" : `updated ${daysAgo} days ago`}
             </p>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
