@@ -5,6 +5,7 @@ interface GithubProps {
   avatar_url: string;
   followers: number;
   following: number;
+  login: string;
   location: string;
   bio: string;
 }
@@ -15,6 +16,8 @@ export interface GithubContextType {
   username: string;
   setUsername: React.Dispatch<React.SetStateAction<string>>;
   fetchUserData: (username: string) => void;
+  searchResults: GithubProps[] | null;
+  searchUsers: (query: string) => void;
 }
 
 export const GithubContext = createContext<GithubContextType | undefined>(
@@ -29,6 +32,9 @@ export const GithubProvider: React.FC<{ children: React.ReactNode }> = ({
   const [userData, setUserData] = useState<GithubProps | null>(null);
   const [reposData, setReposData] = useState<[]>([]);
   const [username, setUsername] = useState<string>("github");
+  const [searchResults, setSearchResults] = useState<GithubProps[] | null>(
+    null,
+  );
 
   useEffect(() => {
     fetchUserData(username);
@@ -70,9 +76,35 @@ export const GithubProvider: React.FC<{ children: React.ReactNode }> = ({
       });
   }
 
+  function searchUsers(query: string) {
+    fetch(`https://api.github.com/search/users?q=${query}`, {
+      method: "GET",
+      headers: {
+        Authorization: `token ${token}`,
+        Accept: "application/vnd.github.v3+json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setSearchResults(data.items);
+        console.log(data.items);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   return (
     <GithubContext.Provider
-      value={{ userData, reposData, username, setUsername, fetchUserData }}
+      value={{
+        userData,
+        reposData,
+        username,
+        setUsername,
+        fetchUserData,
+        searchResults,
+        searchUsers,
+      }}
     >
       {children}
     </GithubContext.Provider>
