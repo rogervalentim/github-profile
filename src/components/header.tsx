@@ -43,7 +43,7 @@ export function Header() {
         <img
           src={hero}
           alt="background github"
-          className="h-48 w-full object-cover lg:h-auto lg:object-contain"
+          className="h-56 w-full object-cover lg:h-auto lg:object-contain"
         />
         <div className="absolute inset-0 flex justify-center pt-8">
           <div className="relative">
@@ -52,7 +52,7 @@ export function Header() {
                 <input
                   type="text"
                   name="username"
-                  className="h-14 w-96 rounded-xl bg-[#20293A] pl-12 pr-4 text-white placeholder-gray-400 outline-none focus:outline-none focus:ring-2 focus:ring-[#3662E3] lg:w-[500px]"
+                  className="h-14 w-[350px] max-w-full rounded-xl bg-[#20293A] pl-12 pr-4 text-white placeholder-gray-400 outline-none focus:outline-none focus:ring-2 focus:ring-[#3662E3] lg:w-[500px]"
                   placeholder="username"
                   value={username}
                   onChange={handleInputChange}
@@ -64,7 +64,7 @@ export function Header() {
             </form>
 
             {showDropdown && singleResult && (
-              <div className="mt-4 w-96 rounded-md bg-[#111729] p-2 lg:w-[500px]">
+              <div className="mt-4 w-[350px] rounded-xl bg-[#111729] p-2 lg:w-[500px]">
                 <div
                   key={singleResult.login}
                   className="flex cursor-pointer gap-2 rounded-xl hover:bg-[#20293A]"
@@ -73,7 +73,7 @@ export function Header() {
                   <img
                     src={singleResult.avatar_url}
                     alt={singleResult.login}
-                    className="h-20 w-20 rounded-xl"
+                    className="h-14 w-14 rounded-xl lg:h-20 lg:w-20"
                   />
                   <div>
                     <p className="ml-2 text-white">{singleResult.login}</p>

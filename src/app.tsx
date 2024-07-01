@@ -16,7 +16,7 @@ export function App() {
     <>
       <Header />
       <Suspense fallback={<Loading />}>
-        <div className="relative top-[-4rem] w-full px-5 pt-4 lg:top-[-3rem] lg:mt-0 lg:px-40">
+        <div className="relative top-[-3rem] w-full px-5 pt-4 lg:top-[-3rem] lg:mt-0 lg:px-40">
           <div className="flex gap-4 lg:items-center">
             <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-[#20293A] lg:h-32 lg:w-32">
               <img
