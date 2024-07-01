@@ -52,7 +52,7 @@ export function Header() {
                 <input
                   type="text"
                   name="username"
-                  className="h-14 w-[350px] max-w-full rounded-xl bg-[#20293A] pl-12 pr-4 text-white placeholder-gray-400 outline-none focus:outline-none focus:ring-2 focus:ring-[#3662E3] lg:w-[500px]"
+                  className="h-14 w-[350px] max-w-full rounded-xl bg-[#20293A] pl-12 pr-4 text-white placeholder-gray-400 outline-none focus:outline-none focus:ring-2 focus:ring-[#3662E3] md:w-[500px]"
                   placeholder="username"
                   value={username}
                   onChange={handleInputChange}
@@ -64,7 +64,7 @@ export function Header() {
             </form>
 
             {showDropdown && singleResult && (
-              <div className="mt-4 w-[350px] rounded-xl bg-[#111729] p-2 lg:w-[500px]">
+              <div className="mt-4 w-[350px] rounded-xl bg-[#111729] p-2 md:w-[500px]">
                 <div
                   key={singleResult.login}
                   className="flex cursor-pointer gap-2 rounded-xl hover:bg-[#20293A]"

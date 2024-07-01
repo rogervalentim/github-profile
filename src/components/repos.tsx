@@ -21,7 +21,7 @@ export function Repos() {
   const displayedData = showAll ? reposData : reposData.slice(0, 4);
   return (
     <>
-      <div className="grid grid-cols-1 items-start gap-8 pt-8 lg:grid-cols-2">
+      <div className="grid grid-cols-1 items-start gap-8 pt-8 md:grid-cols-2">
         {displayedData.map((repo: ReposProps) => (
           <CardRepo
             key={repo.id}
