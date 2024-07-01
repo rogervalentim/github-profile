@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
+# Github Profile
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 💻 Deploy
 
-Currently, two official plugins are available:
+<a href="https://github-profile-one-delta.vercel.app/">Clique aqui para ver o projeto</a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📝 Descrição
 
-## Expanding the ESLint configuration
+O desafio "Github Profile" do Dev Challenges consiste em recriar o design fornecido e integrar com a API do GitHub para buscar e exibir informações detalhadas de usuários do GitHub. O objetivo é replicar a interface com precisão e funcionalidade, mostrando dados como repositórios, seguidores, e outras informações do perfil do usuário.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🔧 Instalação
 
-- Configure the top-level `parserOptions` property like this:
+Instalação com npm
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+  git clone "https://github.com/rogervalentim/github-profile.git"
+  cd roger-valentim
+  npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 🔌 Como Rodar
+
+```bash
+  npm run dev
+```
+
+## 📊 Tecnologias e libs utilizadas
+
+<ul>
+<li>React</li>
+<li>Context API</li>
+<li>Tailwind Css</li>
+<li>Typescript</li>
+</ul>
+
+## 📸 Imagem do projeto
+
+<img src=".github/github.png" alt="imagem do github profile">
